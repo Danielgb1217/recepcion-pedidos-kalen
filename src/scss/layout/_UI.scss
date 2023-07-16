@@ -1,0 +1,385 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        display:grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+        //align-items: center;
+    
+        }
+}
+
+.titulo-principal{
+    h1{            
+    color: v.$azul;
+    }
+}
+
+.titulo-create{    
+    font-size: 5rem;   
+}
+
+.imagen {               //Imagen de la portada
+    height: 20rem;
+    background-image: url("/build/img/portada.jpg");
+    background-size: cover;
+    background-position: center center;
+    @include m.tablet {
+        height: auto;
+    }
+}
+
+.app {
+   //position: relative;
+    width: 95%;  //todo el bloque de la app tendra solo hasta el 95 porciento de ancho para que no toque hasta las orillas
+    margin: 0 auto;     //para que el contenido este centrado
+    padding: 2rem 0;    //para que el titulo no este pegado de la parte de arriba    
+
+    //filter:alpha(opacity=80); /* For IE8 and earlier */
+  // } 
+}
+
+.posicion{
+    position: absolute;
+}
+
+.posicion-rel{
+    position: relative;
+}
+
+.contenedor-imagen_fondo{
+
+    @include m.telefono{
+        display: inline-flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8rem;
+        margin-top: 5rem;
+        img{
+            background-size: cover;
+            background-repeat: no-repeat;
+          
+            background-size: cover;
+            background-position: center center;
+            align-items: center;
+            opacity: 0.4;
+            
+        }
+
+    }
+
+
+}
+
+//css para la pagina de los productos
+.contenedor-productos{
+    max-width: 120rem;
+    margin: 0 auto;    
+}
+
+.producto {
+    padding: 1rem;
+}
+
+.grid {                         /*Distribucin de la pantalla en varias columnas*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /*Separacion entre las columnas del grid column-gap y row-gap*/
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(v.$fuente_principal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;    /*Interlineado separacion entre letras*/
+}
+
+@media (min-width: 768px) {
+    .grid__detalle-producto {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        min-height: 90%;
+    }
+}
+
+.formulario__campo {
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #378f4d;
+    border: 1rem solid #414646;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 2rem;
+    padding: 1rem;
+    margin: 2rem;
+
+    ::placeholder {
+        color: rgb(250, 250, 255);
+        font-size: 1.5em;
+      }
+ }
+ .frm-submit{  
+    
+    align-items: center;
+    border: none;
+    display: flex;
+    font-size: 1rem;   
+    padding: 0rem;
+    transition: background-color .3s ease;
+    margin: 0rem;
+    align-content: space-around;
+    justify-content: space-around;
+ }
+ 
+ .imagen-producto {
+
+    width: auto;
+    @include m.telefono{
+        max-height: 70%;
+        // max-width: 70%;
+        width: auto;
+        background-position: center center;
+    
+        @include m.tablet {
+            height: auto;
+            width: auto;
+        }
+    }
+
+}
+
+.pedido {
+
+    @include m.tablet {
+         display: flex;
+        justify-content: space-between;
+        height: 10rem;      
+    }
+
+    background-color: #2d3c41;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+
+    p {
+        color: v.$blanco;
+        margin: 0 0 calc(v.$separacion/4) 0;
+        text-align: center;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 2rem;
+    }    
+}
+
+// .td {
+//     text-align: center;
+//     margin: 1rem;
+    
+//     @include m.telefono{
+
+//         @include m.tablet{
+//             text-align: center;
+//             display: block;
+//             color: #378f4d;
+// //display: flex;
+
+//         }
+//     }
+
+// }
+
+
+.tabla{
+
+    display: block;
+    @include m.telefono{
+        display: block;
+        @include m.tablet{
+            text-align: center;
+            //display: block;
+            color: #378f4d;
+display: flex;
+
+        }
+    }
+
+
+}
+
+.actualizar-pedido {
+    
+    background: rgba(33, 41, 52, .85);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;
+}
+
+.fila-tabla{
+display: block;
+@include m.telefono{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+    
+}
+
+.actualizar-pedido .content {
+    
+    background: rgb(56 122 214 / 37%);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px #1c2047d9;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+    min-width: 320px !important;
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.3rem;
+
+    p {
+        color:v.$azul;
+        font-size: 3rem;
+    }
+
+}
+
+.actualizar-pedido__ocultar {
+    display: none;
+}
+
+.bienvenida{
+
+   p{ 
+    text-align: center;
+
+    @include m.telefono{
+        color: v.$azul;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+
+   }
+
+}
+
+.id-update_user{
+    display: none;
+}
+
+.centrar{
+    align-items: center;
+    text-align: center;
+}
+
+.horizontal{
+    display: table;
+}
+
+.grid-2{ 
+    align-items: center;
+    @include m.tablet{
+        font-size: 2rem;       
+    }
+}
+
+.grid-dos{
+
+    @include m.tablet{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem; /*Separacion entre las columnas del grid column-gap y row-gap*/     
+    }
+
+}
+
+
+.grid-venta{
+    @include m.tablet{
+        display: grid;
+        
+        grid-row-gap: 2rem;
+        grid-template-columns: repeat(2,1fr);  
+    }
+}
+
+.block{
+    display: block;
+}
+
+.flex{
+    display: block;
+    @include m.telefono{
+        display: flex;
+        justify-content: space-around; 
+    }
+    
+}
+
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    display: none;
+}
+    
+.estadistica{
+
+    width: 20rem;
+    height: 10rem;
+    @include m.telefono{
+        @include m.tablet{
+
+            width: 80rem;
+            height: 50rem;
+        }
+    }
+
+
+
+}
+.img-estadistica{
+    width: 30rem;
+    height: auto;
+    @include m.telefono{
+        @include m.tablet{
+            // display: grid;
+             //grid-template-columns: repeat(1, 1fr);
+             width: 100%;
+             height: 100%;
+             align-items: center;
+     
+         }  
+    }
+ 
+    
+}
+
+// .icono-login{
+//     align-items: center;
+// background-image: url(/build/img/usuario.png);
+//     // width: 15rem;
+//     // height: 15rem;
+//     // //background-color: #2d3c41;
+//     display: -webkit-inline-box;
+// }

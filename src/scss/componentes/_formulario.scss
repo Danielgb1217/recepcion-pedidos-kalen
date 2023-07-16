@@ -1,0 +1,168 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario{
+
+width: auto;
+margin: 0;
+    @include m.telefono{
+        margin-top: 5rem;
+        width: 100%;
+    
+        p{
+            font-size: 5rem;
+        }
+        @include m.tablet{
+            //  display: flex;
+            // justify-content: space-between;
+            // display: grid;
+            // grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+}
+
+.campo{
+
+
+    display: flex;
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label {
+        font-size: 2rem;
+        font-weight: 600;
+        flex: 0 0 10rem;
+    }
+
+    
+
+    input { 
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        margin-top: 1rem;
+        padding: 0;
+        height: 4rem;
+        border-radius: 1rem;
+        @include m.telefono{
+            border: none; //le quita el borde a los inputs
+            padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+            border-radius: 1rem;  // 1 rem equivale a 10 px
+            width:50rem;
+            height: 5rem;
+            margin-right: 2rem;
+            font-size: 2rem;
+        }
+    }
+
+    @include m.tablet {
+        display:block;    
+        }
+
+
+
+
+}
+
+.campo-detalle_producto{
+    background-color: v.$grisDark;
+    border-radius: 1rem;
+    color: #fff;  
+    font-weight: 200;
+    font-size: small;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;   
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    @include m.telefono{
+        background-color: v.$grisDark;
+        border-radius: 1rem;
+        color: #fff;    
+        font-weight: 800;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.campo-selector_producto{
+
+        background-color: #8498c2;
+        border-radius: 1rem;
+        color: #fff;    
+        font-weight: 800;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 30rem;
+        text-align: center;  
+
+
+}
+
+.campo-detalle{
+
+    background-color: v.$grisDark;
+    border-radius: 1rem;
+    color: #fff;    
+    font-weight: 800;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 50rem;
+    height: 20rem;
+    text-align: justify;
+}
+
+.campo-selector {
+    // background-color: #2b4986;
+    background-color: v.$azulOscuro;
+    border-radius: 1rem;
+    color: #fff;    
+    font-weight: 800;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    //text-transform: uppercase;
+    transition: background-color .3s ease;
+    width: 100%;
+    text-align: center;
+    @include m.telefono{
+        background-color: v.$azulOscuro;
+        border-radius: 1rem;
+        color: #fff;    
+        font-weight: 800;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        text-transform: uppercase;
+        transition: background-color .3s ease;
+        width: 30%;
+        text-align: center;
+
+    }
+
+}
+
+
+.selector-ancho_upload{
+    background-color: v.$azulOscuro;
+    border-radius: 1rem;
+    color: #fff;    
+    font-weight: 800;
+    margin-bottom: 1rem;
+    padding: 1rem;    
+    width: 100%;
+    @include m.telefono{
+        background-color: v.$azulOscuro;
+        border-radius: 1rem;
+        color: #fff;    
+        font-weight: 800;
+        margin-bottom: 1rem;
+        padding: 1rem;    
+        width: 70%;
+
+    }
+
+}

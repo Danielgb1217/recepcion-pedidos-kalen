@@ -1,0 +1,166 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boton {
+    @include m.boton(v.$grisDark, v.$blanco);  //mixin con los estilos del boton ya definidos
+}
+
+.boton-crear {
+    @include m.boton(#2b4986, #fff);
+}
+
+.boton-login{
+        align-items: center;
+        margin: 5rem 20rem;
+        @include m.boton(#3EBDF0, v.$blanco);  //mixin con los estilos del boton ya definidos
+
+}
+
+.boton-pedido{
+    background-color: #1b7497;
+    color:#fff;
+    font-size: 2rem;
+    font-weight: 400;  
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    width: 100%;
+    border-radius: 2%;
+    padding: 2rem;
+    margin-top: 1rem;
+    @include m.telefono{
+        background-color: #1b7497;
+        color:#fff;
+        font-size: 2rem;
+        font-weight: 400;  
+        border: none;
+        transition-property: background-color;
+        transition-duration: .3s;
+        text-align: center;
+        width: auto;
+        border-radius: 2%;
+        padding: 1rem;
+        margin-top: 0.3rem;
+
+    }
+
+    @include m.tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: darken( #394190, 20% );
+        cursor: pointer;
+    }
+}
+
+.boton-reporte{
+    background-color: v.$azul;    
+    color:#fff;  
+    font-size: 2rem;
+    font-weight: 700;  
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center; 
+    border-radius: 2%;
+    padding: 1rem 1rem;
+    width: 100%;
+
+    margin-top: 1rem;
+    @include m.telefono{
+        background-color: v.$azul;    
+        color:#fff;  
+        font-size: 2rem;
+        font-weight: 700;  
+        border: none;
+        transition-property: background-color;
+        transition-duration: .3s;
+        text-align: center; 
+        border-radius: 2%;
+        padding: 1rem 1rem;
+    
+        margin: 1rem;
+    
+        @include m.tablet {
+            width: auto;
+        }
+        &:hover {
+            background-color: darken( v.$azul, 20% );
+            cursor: pointer;
+        }
+
+    }
+
+}
+
+.div-boton_login{
+    align-items: center;
+    align-items: end;
+    display: grid;
+    justify-content: space-evenly;
+}
+
+
+.boton-logout{
+    background-color: v.$azul;
+    padding: 1.5rem 4rem;
+    color: v.$blanco;    
+    font-size: 2rem;
+    font-weight: 400;
+    font-weight: 700;
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    width: 100%;
+    border-radius: 2%;
+
+    @include m.tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: darken( v.$azul, 20% );
+        cursor: pointer;
+    }
+}
+
+
+
+.boton-usuario{
+    background-color: #1b7497;
+    color:#fff;
+    font-size: 2rem;
+    font-weight: 400;  
+    border: none;
+    transition-property: background-color;
+    transition-duration: .3s;
+    text-align: center;
+    width: 12rem;
+    border-radius: 2%;
+    padding: 1rem;
+    margin: 1rem;
+    @include m.telefono{
+        background-color: #1b7497;
+        color:#fff;
+        font-size: 2rem;
+        font-weight: 400;  
+        border: none;
+        transition-property: background-color;
+        transition-duration: .3s;
+        text-align: center;
+        width: auto;
+        border-radius: 2%;
+        padding: 1rem;
+        margin-top: 0.3rem;
+
+    }
+
+    @include m.tablet {
+        width: auto;
+    }
+    &:hover {
+        background-color: darken( #394190, 20% );
+        cursor: pointer;
+    }
+}

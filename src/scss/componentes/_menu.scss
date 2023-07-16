@@ -1,0 +1,104 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.menu {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height:3rem;
+
+    // @include m.telefono{
+    //     margin-top: 3rem;
+    //     margin-bottom: 3rem;
+    //     height:3rem;
+
+        @include m.tablet{
+            width:5rem;
+            height:2rem;
+            /*Para que este siempre en la misma parte de la pantalla aunque se haga scroll*/
+            //position:fixed;
+            /*Tiempo en el que va a transitar la animacion*/
+            //transition: .4s all ;
+            /*este arriba de todo en la pantalla*/
+            z-index: 1; 
+        }
+
+    // }
+
+    
+    ul{
+        /*solucionar espacios no deseados*/
+        padding:0px;
+        text-align: center;                
+    }
+
+    li{
+        /*Velocidad de transicion del contenido*/
+        transition:all .3s;
+        list-style: none; 
+        }
+
+        a{
+        text-decoration: none;        
+        font-weight: normal;        
+        /*La letra crece con el menu de esta manera no se va a ver como se ajusta al margen mientras crece*/
+        transition: .3s all ;
+        /*Se ocultan los elementos*/
+        font-size: 0px;
+        padding:0px;
+    }
+    
+} 
+
+.menu:hover{
+    height: 90vh; 
+    background: rgba(5, 33, 51, 0.98);
+    @include m.telefono{
+        /*Tamaño cuando el cursor señale la barra*/
+        width: 10%;
+        height: 60vh;        
+        /*Color*/
+        background: rgba(5, 33, 51, 0.98);
+    }
+
+}
+
+.menu:hover h2{
+    /*posicion dentro de barra del h2*/
+    padding:15px;
+    font-size: 35px;
+}
+
+.menu:hover a{ 
+    font-size:20px ;
+    color:white;
+    /*Se usa el display block para que el enlace respete el margin*/
+    display: block;
+    padding:20px;
+}
+
+.menu:hover li{
+    border-top:1px solid #03121b;
+    /*Espacios entre las lineas y el contenido*/        
+    width:100%;
+        
+}
+
+.menu:hover ul:last-of-type{
+    border-bottom: 1px solid #03121b;
+}
+
+.menu:hover a:hover{ 
+    font-size: 25px;
+    padding: 30px 0px; 
+    background: rgba(23, 78, 112, 0.98);  
+}
+
+.menu:hover{
+    width: auto;
+    }
+
+@media (min-width: 768px){
+    .menu:hover{
+    width: 45%;
+    }
+}

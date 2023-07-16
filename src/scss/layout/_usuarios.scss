@@ -1,0 +1,32 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.tabla-usuarios{
+    margin-top: 5rem;
+    width: 100%;
+    border: 1px solid rgb(237, 240, 246);
+
+    th, td {
+        text-align: center;
+        width: 25%;
+        //text-align: left;
+        vertical-align: top;
+        border: 1px solid rgb(237, 240, 246);
+     }
+
+     p{
+        font-size: 2rem;
+        font-weight: 900;
+     }
+}
+
+.cabecero-usuarios{
+ 
+    @include m.tablet{
+        display: flex;
+        margin: 0 3rem;
+        padding: 0 1rem;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}

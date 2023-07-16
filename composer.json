@@ -1,0 +1,26 @@
+{
+    "name": "daniel/kalen",
+    "description": "Aplicativo web para el control de inventarios y recepcion de pedidos de una empresa textil",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Danielgb1217",
+            "email": "Danielgb1217@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.5",
+        "dompdf/dompdf": "^2.0",
+        "vlucas/phpdotenv": "^5.4",
+        "ext-gd": "*"        
+    }
+}

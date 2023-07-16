@@ -1,0 +1,7 @@
+node_modules/
+vendor/
+admin.txt
+.env
+scriptsBD.sql
+prueba.txt
+HerokuDB

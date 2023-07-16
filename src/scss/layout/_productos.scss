@@ -1,0 +1,164 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.seccion{
+    padding: 5rem 0;
+    display: none;
+    .text-center{
+        text-align: center;
+    }
+}
+
+.mostrar {
+    display: block;
+}
+
+.ocultar {
+    display: none;
+}
+
+//---------------------------------------css a los componenetess html creados desde el java script tomados desde el json-------------------------
+
+.listado-productos {
+
+    display: grid;
+    gap: 2rem;
+    @include m.tablet {
+        @include m.grid(4, 2rem);
+    }
+
+    .productos {
+
+        background-color: #371eac30;
+        padding: 3rem;
+        border-radius: 1rem;
+        transition-property: transform;
+        transition-duration: 300ms;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        p {
+            color: v.$blanco;
+            margin: 0 0 calc(v.$separacion/4) 0;
+            text-align: center;
+        }
+
+        .costo-producto {
+            color: aquamarine;
+            font-weight: v.$bold;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+    }
+
+}
+
+.detalle-producto {
+
+    width: auto;
+    @include m.telefono{
+        @include m.tablet {
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            min-height: 50vh;
+            align-items: center;
+            justify-items: center;
+            margin: 0 auto;
+            padding: 0rem;
+        }
+
+
+    }
+
+}
+
+
+.ocultar-producto{
+    display: none;
+}
+
+.ancho-producto{
+
+    select, input{
+        width: auto;
+    }
+
+
+    @include m.telefono{
+
+
+
+    select{
+        width: 30rem;;
+    }
+
+    input{
+        width: 50rem;
+    }
+
+}
+}
+
+.compras {
+    display: block;
+    a{
+        color: v.$azul;
+
+        @include m.telefono{
+            color: #fff;
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 2rem;
+            &:hover {
+                color: darken( #394190, 20% );
+                cursor: pointer;
+            }
+        }
+
+    h1{
+        font-size: 7rem;
+        &:hover {
+            color: darken( #394190, 20% );
+            cursor: pointer;
+        }
+    }
+
+    }
+
+    @include m.tablet {       
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+        margin-top: 4rem;
+
+        &:hover {
+            color: darken( #394190, 20% );
+            cursor: pointer;
+        }
+    }
+}
+
+.carrito-compras{
+    overflow-x: auto;
+
+}
+
+.icono-compras{
+  
+display: block;
+    
+@include m.telefono{
+    color: v.$azul;
+    font-size: 3rem;
+    align-items: center;
+    &:hover {
+        color: darken( #394190, 20% );
+        cursor: pointer;
+    }
+}
+
+
+  
+}

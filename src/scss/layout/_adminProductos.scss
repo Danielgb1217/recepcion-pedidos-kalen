@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.imagen-admin {
+    // height: 20rem;
+    // //background-image: url(../../img/f76ac656c9313b73120a3aa17bdd45d1.jpg);
+     background-size: cover;
+     background-position: center center;
+     opacity: 0.4;
+
+
+}
+
+.tabla-admin{
+    border: 1px solid rgb(249, 249, 249);
+}
+
+.input-buscar{
+    input {
+        border: none; //le quita el borde a los inputs
+        padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+        border-radius: 1rem;  // 1 rem equivale a 10 px
+        width:100%;
+        height: 5rem;
+        margin-right: 2rem;
+        font-size: 2rem;
+        margin-top: 2rem;
+        @include m.telefono{
+            border: none; //le quita el borde a los inputs
+            padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+            border-radius: 1rem;  // 1 rem equivale a 10 px
+            width:80%;
+            height: 5rem;
+            margin-right: 2rem;
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+
+    }
+}
+
+.fila-tabla_admin{
+    td{
+    background-color: rgb(151, 162, 158);  
+        @include m.tablet {
+            margin: 2rem;
+            padding: 2rem;
+        }
+    }  
+}

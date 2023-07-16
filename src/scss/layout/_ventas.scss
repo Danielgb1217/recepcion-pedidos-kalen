@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cabecero-ventas{
+text-align: center;
+    @include m.telefono{
+        align-items: center;
+        @include m.tablet{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 3rem;
+            padding: 0 1rem;
+        }
+
+    }
+
+}
+
+.cabecero-ventas_tabla{ 
+    display: block;  
+   @include m.telefono{
+
+    align-items: end;
+    justify-content: space-between;
+    margin: 1rem 3rem;
+    padding: 0 1rem;
+
+   }
+
+    
+}
+
+.buscar-ventas{
+
+    background-color: none;
+    @include m.telefono{
+        background-color: #5598b1;
+        padding-left: 1rem;
+
+    }
+
+}

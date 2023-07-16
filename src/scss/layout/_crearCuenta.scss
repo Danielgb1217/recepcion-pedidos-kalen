@@ -1,0 +1,66 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-crear_cuenta{
+margin: 8rem;
+}
+
+.campo-crear_cuenta{
+
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label {
+        font-size: 2rem;
+        font-weight: 600;
+        flex: 0 0 10rem;
+    }
+
+    input {
+        border: none; //le quita el borde a los inputs
+        padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+        border-radius: 1rem;  // 1 rem equivale a 10 px
+        width:100%;
+        height: 5rem;
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5rem;
+        }
+}
+
+.campo-crear{
+    margin-bottom: 2rem;
+    align-items: center;
+
+    label {
+        font-size: 2rem;
+        font-weight: 600;
+        flex: 0 0 10rem;
+    }
+
+    input {
+        border: none; //le quita el borde a los inputs
+        padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+        border-radius: 1rem;  // 1 rem equivale a 10 px
+        width:100%;
+        height: 5rem;
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+
+    select{
+        border: none; //le quita el borde a los inputs
+        padding: calc(v.$separacion / 4);  //calc es una funcion que me permite hacer operaciones en el css
+        border-radius: 1rem;  // 1 rem equivale a 10 px
+        width:50%;
+        height: 5rem;
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+
+}
